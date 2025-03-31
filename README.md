@@ -7,40 +7,20 @@ https://github.com/user-attachments/assets/069e0cbe-95fb-40ba-bd0d-358ce5142909
 
 # Task 1: Building a Component
 
-### Component Choice: Top-Up for Users
+## Component Choice: Top-Up for Users
 
-I chose the "Top-Up for Users" component because it offers a comprehensive user flow with multiple screens and interactions, and it demonstrates handling of form inputs, validation, and state management. The Whitelisting component felt too simplistic to fully showcase my abilities.
+I chose to implement the "Top-Up for Users" component because it offered a complete user flow with multiple screens and interactions—from selecting top-up options to confirming the request. This approach allowed me to demonstrate various skills such as form handling, state management, and dynamic component reuse. While the Whitelist Domains component was interesting, it felt too simple to showcase the breadth of my capabilities.
 
-### Technical Notes and Trade-offs
+## Technical Implementation and Reusable Components
 
-**Implementation Approach:**
-- **Framework:** Next.js with App Router for efficient routing and server components.
-- **Styling:** Tailwind CSS.
-- **State Management:** Context-based state management for the multi-step flow.
-- **Mock Data:** Hardcoded data for countries, top-up options, and user information.
+In this project, I focused on building reusable components to keep the code maintainable and scalable. For example, I created a dynamic Action Buttons component that can be fed different properties (like label, variant, and onClick) to serve multiple purposes across the flow. I also built components like the Header and TopupOption to ensure consistency and reusability. Accessibility was a key priority—I added proper ARIA attributes and semantic HTML elements to enhance SEO and overall user accessibility.
 
-**Key Features:**
-- Multi-step flow for selecting top-up options.
-- HTML Accessibility features following best practices.
-- International data selection with a country search.
-- Date selection using a calendar interface.
-- Loading and error states with retry functionality.
-- Phone number input with formatting and validation.
-- Confirmation screen with a success message.
+The overall flow is managed using a context-based state management system. Even though I used hardcoded data for demonstration purposes, storing user selections in context simulates a realistic multi-step process. This design choice mimics the behavior of a production system where data flows smoothly between different screens, even if in a real-world scenario, the navigation might be handled via page rerouting and API calls.
 
-**Trade-offs:**
-- **Tailwind vs. CSS/SCSS:** While Tailwind accelerates development, pure CSS/SCSS may offer better performance, scalability, and organization in larger codebases.
-- **Client Components:** Improved interactivity at the cost of a slightly larger bundle size.
-- **Context API vs. Form Libraries:** React Context simplifies state management, but lacks the robustness of specialized form libraries like React Hook Form.
-- **Font Family:** I noticed you guys use Selecta as Font Family. Unfortunately, I was unable to find that font online for free, reason why I am using Poppins for this.
-- **Mock Data:** Using hardcoded data speeds up development but would require refactoring for real API integration.
+## Trade-offs and Future Considerations
 
-**Future Improvements:**
-- Integrate with APIs for country data and top-up options.
-- Implement more robust form validation.
-- Add animations for smoother transitions.
-- Enhance accessibility features.
-- Expand test coverage.
+This implementation balances demonstrating a comprehensive user flow with practical, reusable code. However, there are trade-offs. I opted for context-based state management over traditional page routing to maintain a seamless flow, and used Tailwind CSS for rapid development despite its limitations in scalability compared to CSS modules or styled-components. In a production environment, I would enhance this by integrating robust form libraries like React Hook Form, improving API integrations, and conducting more extensive accessibility testing to ensure a polished, scalable solution.
+
 
 ---
 
