@@ -30,30 +30,30 @@ The Whitelisting component seemed a little too simplistic and I don't think it w
 
 ### Technical Trade-offs
 
-1. **Tailwind vs CSS/SCSS**:
+**Tailwind vs CSS/SCSS**:
 
-1. Trade-off: Had to use Tailwind instead of pure CSS/SCSS. From experience, I believe pure CSS/SCSS is superior for performance, scalability, and organization, especially in larger codebases. CSS keeps everything clean and organized while Tailwind can become messy as projects grow. Additionally, CSS offers much more flexibility for complex styling needs.
-
-
-
-2. **Client Components**:
-
-1. Used client components for interactive elements requiring state
-2. Trade-off: Slightly larger bundle size but better user experience with client-side interactions
+- Had to use Tailwind instead of pure CSS/SCSS. From experience, I believe pure CSS/SCSS is superior for performance, scalability, and organization, especially in larger codebases. CSS keeps everything clean and organized while Tailwind can become messy as projects grow. Additionally, CSS offers much more flexibility for complex styling needs.
 
 
 
-3. **Context API vs. Form Libraries**:
+**Client Components**:
 
-1. Used React Context for state management instead of form libraries like React Hook Form
-2. Trade-off: Simpler implementation for this specific use case, but less robust for complex form validation
+- Used client components for interactive elements requiring state
+- Trade-off: Slightly larger bundle size but better user experience with client-side interactions
 
 
 
-4. **Mock Data**:
+**Context API vs. Form Libraries**:
 
-1. Used hardcoded data instead of API calls
-2. Trade-off: Faster development but would need refactoring for real API integration
+- Used React Context for state management instead of form libraries like React Hook Form
+- Trade-off: Simpler implementation for this specific use case, but less robust for complex form validation
+
+
+
+**Mock Data**:
+
+- Used hardcoded data instead of API calls
+- Trade-off: Faster development but would need refactoring for real API integration
 
 
 
