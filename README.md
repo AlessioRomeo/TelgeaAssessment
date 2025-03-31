@@ -25,6 +25,7 @@ I chose the "Top-Up for Users" component because it offers a comprehensive user 
 - **Tailwind vs. CSS/SCSS:** While Tailwind accelerates development, pure CSS/SCSS may offer better performance, scalability, and organization in larger codebases.
 - **Client Components:** Improved interactivity at the cost of a slightly larger bundle size.
 - **Context API vs. Form Libraries:** React Context simplifies state management, but lacks the robustness of specialized form libraries like React Hook Form.
+- **Font Family:** I noticed you guys use Selecta as Font Family. Unfortunately, I was unable to fond that font online for free, reason why I am using Poppins for this.
 - **Mock Data:** Using hardcoded data speeds up development but would require refactoring for real API integration.
 
 **Future Improvements:**
