@@ -63,7 +63,13 @@ export default function SendingTextLoad({
     const actionButtons = buttons || defaultButtons
 
     return (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center">
+        <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="sending-text-load-title"
+            aria-describedby="sending-text-load-description"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center"
+        >
             <div
                 className="absolute inset-0"
                 style={{
@@ -76,10 +82,14 @@ export default function SendingTextLoad({
                 {isError ? (
                     <>
                         <div className="relative h-12 w-12 mb-5 flex items-center justify-center text-red-500">
-                            <PiWarningCircleBold size={52} />
+                            <PiWarningCircleBold size={52} aria-hidden="true" />
                         </div>
-                        <h2 className="text-lg font-semibold text-black mb-1">{errorTitle}</h2>
-                        <p className="text-xs text-gray-500 mb-6">{errorDescription}</p>
+                        <h2 id="sending-text-load-title" className="text-lg font-semibold text-black mb-1">
+                            {errorTitle}
+                        </h2>
+                        <p id="sending-text-load-description" className="text-xs text-gray-500 mb-6">
+                            {errorDescription}
+                        </p>
 
                         <div className="flex gap-3 w-full justify-center">
                             {actionButtons.map((button, index) => {
@@ -110,7 +120,13 @@ export default function SendingTextLoad({
                 ) : (
                     <>
                         <div className="relative h-12 w-12 mb-5">
-                            <svg className="animate-spin" viewBox="0 0 50 50" width="100%" height="100%">
+                            <svg
+                                className="animate-spin"
+                                viewBox="0 0 50 50"
+                                width="100%"
+                                height="100%"
+                                aria-hidden="true"
+                            >
                                 <circle
                                     cx="25"
                                     cy="25"
@@ -130,8 +146,12 @@ export default function SendingTextLoad({
                                 />
                             </svg>
                         </div>
-                        <h2 className="text-lg font-semibold text-black mb-1">{loadingTitle}</h2>
-                        <p className="text-xs text-gray-500">{loadingDescription}</p>
+                        <h2 id="sending-text-load-title" className="text-lg font-semibold text-black mb-1">
+                            {loadingTitle}
+                        </h2>
+                        <p id="sending-text-load-description" className="text-xs text-gray-500">
+                            {loadingDescription}
+                        </p>
                     </>
                 )}
             </div>

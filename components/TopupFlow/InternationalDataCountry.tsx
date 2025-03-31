@@ -46,7 +46,7 @@ export default function InternationalDataCountry() {
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
 
   const filteredCountries = countries.filter((country) =>
-    country.name.toLowerCase().includes(searchQuery.toLowerCase()),
+      country.name.toLowerCase().includes(searchQuery.toLowerCase()),
   )
 
   const handleCancel = () => {
@@ -64,63 +64,55 @@ export default function InternationalDataCountry() {
   }
 
   return (
-    <div className="w-full flex flex-col">
-
-      <Header showCancel={true} onCancel={handleCancel} />
-
-
-      <h1 className="text-2xl font-medium mb-3 pt-3">Top up International Data</h1>
-      <p className="text-base mb-6">Which country should the data work in?</p>
-
-
-      <div className="relative mb-4">
-        <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-          <Search size={20} className="text-black" />
+      <div role="main" className="w-full flex flex-col">
+        <Header showCancel={true} onCancel={handleCancel} />
+        <h1 className="text-2xl font-medium mb-3 pt-3">Top up International Data</h1>
+        <p className="text-base mb-6">Which country should the data work in?</p>
+        <div className="relative mb-4">
+          <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+            <Search size={20} className="text-black" aria-hidden="true" />
+          </div>
+          <input
+              type="text"
+              placeholder="Search country"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 rounded-lg bg-[#E9E7E2] focus:outline-none text-sm"
+              aria-label="Search country"
+          />
         </div>
-        <input
-          type="text"
-          placeholder="Search country"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-3 rounded-lg bg-[#E9E7E2] focus:outline-none text-sm"
+        <div className="mt-2 space-y-1">
+          {filteredCountries.map((country) => (
+              <button
+                  key={country.code}
+                  type="button"
+                  onClick={() => handleSelectCountry(country.name, country.flagUrl)}
+                  className="w-full flex items-center py-3 px-3"
+              >
+                <div className="w-8 h-8 mr-3 rounded-full overflow-hidden flex-shrink-0 border border-gray-200">
+                  <Image
+                      src={country.flagUrl || "/placeholder.svg"}
+                      alt={`Flag of ${country.name}`}
+                      width={32}
+                      height={32}
+                      className="object-cover w-full h-full"
+                  />
+                </div>
+                <span className="text-base">{country.name}</span>
+              </button>
+          ))}
+        </div>
+        <ActionButtons
+            buttons={[
+              {
+                label: "Back",
+                onClick: handleBack,
+                variant: "secondary",
+                className: "w-1/2 mx-auto",
+              },
+            ]}
+            className="mt-auto pb-10"
         />
       </div>
-
-
-      <div className="mt-2 space-y-1">
-        {filteredCountries.map((country) => (
-          <button
-            key={country.code}
-            onClick={() => handleSelectCountry(country.name, country.flagUrl)}
-            className="w-full flex items-center py-3 px-3"
-          >
-            <div className="w-8 h-8 mr-3 rounded-full overflow-hidden flex-shrink-0 border border-gray-200">
-              <Image
-                src={country.flagUrl || "/placeholder.svg"}
-                alt={`Flag of ${country.name}`}
-                width={32}
-                height={32}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <span className="text-base">{country.name}</span>
-          </button>
-        ))}
-      </div>
-
-
-      <ActionButtons
-        buttons={[
-          {
-            label: "Back",
-            onClick: handleBack,
-            variant: "secondary",
-            className: "w-1/2 mx-auto",
-          },
-        ]}
-        className="mt-auto pb-10"
-      />
-    </div>
   )
 }
-
