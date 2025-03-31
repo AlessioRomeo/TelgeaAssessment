@@ -2,13 +2,13 @@
 
 import React from "react"
 import { TopupFlowProvider, TopupFlowStep, useTopupFlow } from "./TopupFlowContext"
-import EnterNumber from "./EnterNumber"
-import SelectTopup from "./SelectTopup"
-import SelectDate from "./SelectDate"
-import InternationalDataCountry from "./InternationalDataCountry"
-import InternationalDataTopups from "./InternationalDataTopups"
-import TopupRequested from "./TopupRequested"
-import SendingTextLoad from "./SendingTextLoad"
+import EnterNumber from "./Steps/EnterNumber"
+import SelectTopup from "./Steps/SelectTopup"
+import SelectDate from "./Steps/SelectDate"
+import InternationalDataCountry from "./Steps/InternationalDataCountry"
+import InternationalDataTopups from "./Steps/InternationalDataTopups"
+import TopupRequested from "./Steps/TopupRequested"
+import SendingTextLoad from "./Reusable/SendingTextLoad"
 
 // This component decides which step to render based on the current step in context
 function FlowStepRenderer() {

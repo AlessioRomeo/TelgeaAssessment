@@ -1,9 +1,9 @@
 "use client"
 
-import { useTopupFlow, TopupFlowStep } from "./TopupFlowContext"
-import Header from "./Header"
+import { useTopupFlow, TopupFlowStep } from "../TopupFlowContext"
+import Header from "../Reusable/Header"
 import Image from "next/image"
-import TopupOption from "./TopupOption"
+import TopupOption from "../Reusable/TopupOption"
 
 export default function InternationalDataTopups() {
   const { flowData, updateFlowData, goToStep, resetFlow } = useTopupFlow()

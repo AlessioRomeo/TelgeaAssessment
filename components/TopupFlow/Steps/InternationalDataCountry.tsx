@@ -1,11 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { useTopupFlow, TopupFlowStep } from "./TopupFlowContext"
+import { useTopupFlow, TopupFlowStep } from "../TopupFlowContext"
 import { Search } from "lucide-react"
 import Image from "next/image"
-import Header from "./Header"
-import ActionButtons from "./ActionButtons"
+import Header from "../Reusable/Header"
+import ActionButtons from "../Reusable/ActionButtons"
 
 const countries = [
   {

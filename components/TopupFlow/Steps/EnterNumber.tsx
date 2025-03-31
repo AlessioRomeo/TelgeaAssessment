@@ -2,8 +2,8 @@
 
 import type React from "react"
 import { useState } from "react"
-import { useTopupFlow } from "./TopupFlowContext"
-import Header from "@/components/TopupFlow/Header"
+import { useTopupFlow } from "../TopupFlowContext"
+import Header from "@/components/TopupFlow/Reusable/Header"
 
 interface EnterNumberProps {
   onSubmit: () => void

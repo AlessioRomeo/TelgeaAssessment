@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { useTopupFlow, TopupFlowStep } from "./TopupFlowContext"
+import { useTopupFlow, TopupFlowStep } from "../TopupFlowContext"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import ActionButtons from "./ActionButtons"
-import Header from "./Header"
+import ActionButtons from "../Reusable/ActionButtons"
+import Header from "../Reusable/Header"
 import Image from "next/image"
-import SendingTextLoad from "./SendingTextLoad"
+import SendingTextLoad from "../Reusable/SendingTextLoad"
 
 export default function SelectDate() {
   const { flowData, updateFlowData, goToStep, resetFlow } = useTopupFlow()

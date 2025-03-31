@@ -1,6 +1,6 @@
 "use client"
 
-import { useTopupFlow } from "./TopupFlowContext"
+import { useTopupFlow } from "../TopupFlowContext"
 
 export default function TopupRequested() {
     const { resetFlow, flowData } = useTopupFlow()
