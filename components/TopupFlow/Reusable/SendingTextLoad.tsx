@@ -79,6 +79,12 @@ export default function SendingTextLoad({
             />
 
             <div className="relative z-10 flex flex-col items-center w-[90%]">
+                {/* 
+                  Demo Note: Instead of immediately rerouting to User-Topup-EnterNumber (on initial load) 
+                  or User-Topup-EnterCode (on subsequent load), I implemented a 3-second delay.
+                  The first attempt displays an error state; after clicking "Try again," the flow continues to the next step.
+                  This approach allows you to view and test the entire workflow in a single flow.
+                */}
                 {isError ? (
                     <>
                         <div className="relative h-12 w-12 mb-5 flex items-center justify-center text-red-500">
