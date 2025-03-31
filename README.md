@@ -1,9 +1,9 @@
 
-View the demo from the following link:
+# Demo Video Preview:
 
 https://github.com/user-attachments/assets/069e0cbe-95fb-40ba-bd0d-358ce5142909
 
-
+---
 
 # Task 1: Building a Component
 
@@ -13,13 +13,16 @@ I chose to implement the "Top-Up for Users" component because it offered a compl
 
 ## Technical Implementation and Reusable Components
 
-In this project, I focused on building reusable components to keep the code maintainable and scalable. For example, I created a dynamic Action Buttons component that can be fed different properties (like label, variant, and onClick) to serve multiple purposes across the flow. I also built components like the Header and TopupOption to ensure consistency and reusability. Accessibility was a key priority—I added proper ARIA attributes and semantic HTML elements to enhance SEO and overall user accessibility.
-
 The overall flow is managed using a context-based state management system. Even though I used hardcoded data for demonstration purposes, storing user selections in context simulates a realistic multi-step process. This design choice mimics the behavior of a production system where data flows smoothly between different screens, even if in a real-world scenario, the navigation might be handled via page rerouting and API calls.
+
+In this project, I focused on building reusable components to keep the code maintainable and scalable. For example, I created a dynamic Action Buttons component that can be fed different properties (like label, variant, and onClick) to serve multiple purposes across the flow. I also built components like the Header and TopupOption to ensure consistency and reusability. Accessibility was a key priority—I added proper ARIA attributes and semantic HTML elements to enhance SEO and overall user accessibility.
 
 ## Trade-offs and Future Considerations
 
-This implementation balances demonstrating a comprehensive user flow with practical, reusable code. However, there are trade-offs. I opted for context-based state management over traditional page routing to maintain a seamless flow, and used Tailwind CSS for rapid development despite its limitations in scalability compared to CSS modules or styled-components. In a production environment, I would enhance this by integrating robust form libraries like React Hook Form, improving API integrations, and conducting more extensive accessibility testing to ensure a polished, scalable solution.
+I used a context-based state management approach to handle the multi-step flow, which allows realistic data sharing between components without relying on traditional page routing. Although Tailwind CSS was specified for this test, based on my experience at both startups and larger companies, I’ve found that pure CSS/SCSS is generally more effective for large-scale projects—it’s more organized, performs better, scales more efficiently, and is more customizable without relying on external libraries.
+
+For the demo, I couldn’t find a free version of the "Selecta" font used in the design, so I opted for the classic Poppins font instead. In a production environment, I would implement the correct font. Additionally, I didn’t focus heavily on responsiveness since it wasn’t clear whether this was intended as a mobile-only web app. However, I avoided using fixed sizes for most elements to keep the design somewhat adaptable. In a real-world application, I would ensure a fully responsive layout, integrate robust form libraries like React Hook Form, improve API integrations, and perform extensive accessibility testing.
+
 
 
 ---
