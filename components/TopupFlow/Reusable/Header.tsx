@@ -1,21 +1,48 @@
 "use client"
 
+import React, { useCallback } from "react"
+import BrandLogo from "./BrandLogo"
+
 interface HeaderProps {
+    /**
+     * Whether to show the "Cancel" button on the right side.
+     */
     showCancel?: boolean
+    /**
+     * Callback for when the user clicks "Cancel".
+     */
     onCancel?: () => void
+    /**
+     * Additional classes for the header container.
+     */
     className?: string
 }
 
-export default function Header({ showCancel = true, onCancel, className = "mb-5" }: HeaderProps) {
+/**
+ * Header:
+ * A top bar with a Telgea brand logo and an optional "Cancel" button.
+ */
+export default function Header({
+                                   showCancel = true,
+                                   onCancel,
+                                   className = "mb-5",
+                               }: HeaderProps) {
+    // Minor optimization to avoid re-creating the cancel handler
+    const handleCancel = useCallback(() => {
+        onCancel?.()
+    }, [onCancel])
+
     return (
         <div className={`flex justify-between items-center ${className}`}>
-            <div className="flex items-center">
-                <div className="mr-2 rounded-full bg-black" style={{ width: "23px", height: "23px" }}></div>
-                <span className="text-3xl font-medium">Telgea</span>
-            </div>
+            {/* Brand logo (black circle + "Telgea") */}
+            <BrandLogo />
 
             {showCancel && onCancel && (
-                <button type="button" onClick={onCancel} className="text-[#B5B5B2] flex items-center text-sm">
+                <button
+                    type="button"
+                    onClick={handleCancel}
+                    className="text-[#B5B5B2] flex items-center text-sm"
+                >
                     Cancel
                     <svg
                         aria-hidden="true"

@@ -1,49 +1,54 @@
-import React from 'react';
+import React, { useCallback, memo } from "react";
 
-// Define proper TypeScript interface for component props
+
 interface ButtonProps {
-    /**
-     * Function to execute when button is clicked
-     */
+    /** Function to execute when the button is clicked. */
     onClick: () => void;
-
-    /**
-     * Text to display inside the button
-     * @default "Click me"
-     */
+    /** Text to display inside the button. Defaults to "Click me". */
     text?: string;
-
-    /**
-     * Optional className for additional styling
-     */
+    /** If true, the button is disabled. Defaults to false. */
+    disabled?: boolean;
+    /** Additional CSS classes for custom styling. */
     className?: string;
 }
 
 /**
- * A reusable button component with consistent styling
- *
  * Improvements made:
- * - Added TypeScript types for better type safety
- * - Used descriptive prop names (onClick instead of click)
- * - Implemented Tailwind classes instead of inline styles for consistency
- * - Added proper JSDoc comments for better documentation
- * - Used proper formatting and indentation for readability
- * - Added className prop to allow for customization
+ * - Added TypeScript types for improved type safety.
+ * - Used descriptive prop names with default values.
+ * - Optimized event handling with useCallback to avoid unnecessary re-renders.
+ * - Managed styling with conditional classes, ensuring the disabled state is clearly indicated.
+ * - Wrapped the component with React.memo for further performance optimization.
  */
-export default function Button({
-                                   onClick,
-                                   text = "Click me", // Default value using parameter destructuring
-                                   className = ""
-                               }: ButtonProps) {
+const BetterButton: React.FC<ButtonProps> = ({
+                                                 onClick,
+                                                 text = "Click me",
+                                                 disabled = false,
+                                                 className = "",
+                                             }) => {
+    const handleClick = useCallback(() => {
+        if (!disabled) {
+            onClick();
+        }
+    }, [onClick, disabled]);
+
+    // Construct CSS classes conditionally based on the disabled state.
+    const baseClasses = "bg-blue-600 text-white py-2 px-4 rounded transition-colors";
+    const hoverClasses = disabled ? "" : "hover:bg-blue-700";
+    const disabledClasses = disabled ? "opacity-50 cursor-not-allowed" : "";
+    const buttonClasses = `${baseClasses} ${hoverClasses} ${disabledClasses} ${className}`;
+
     return (
         <button
-            onClick={onClick}
-            className={`bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 
-            transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 
-            focus:ring-opacity-50 ${className}`}
-            type="button" // Explicitly set button type for accessibility
+            type="button"
+            onClick={handleClick}
+            disabled={disabled}
+            aria-disabled={disabled}
+            className={buttonClasses}
         >
             {text}
         </button>
     );
-}
+};
+
+export default memo(BetterButton);
