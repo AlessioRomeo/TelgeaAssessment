@@ -14,7 +14,7 @@ I chose the "Top-Up for Users" component because it offers a comprehensive user 
 
 **Key Features:**
 - Multi-step flow for selecting top-up options.
-- Accessibility features following best practices.
+- HTML Accessibility features following best practices.
 - International data selection with a country search.
 - Date selection using a calendar interface.
 - Loading and error states with retry functionality.
