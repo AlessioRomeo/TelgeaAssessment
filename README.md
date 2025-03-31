@@ -1,68 +1,47 @@
-## Component Choice: Top-Up for Users
+# Task 1: Building a Component
 
-The main two reasons I chose to implement the "Top-Up for Users" component:
+### Component Choice: Top-Up for Users
 
-1. It provides a complete user flow with multiple screens and interactions
-2. It demonstrates handling of form inputs, validation, and state management
+I chose the "Top-Up for Users" component because it offers a comprehensive user flow with multiple screens and interactions, and it demonstrates handling of form inputs, validation, and state management. The Whitelisting component felt too simplistic to fully showcase my abilities.
 
-The Whitelisting component seemed a little too simplistic and I don't think it would've showcased my abilities the same way.
+### Technical Notes and Trade-offs
 
+**Implementation Approach:**
+- **Framework:** Next.js with App Router for efficient routing and server components.
+- **Styling:** Tailwind CSS.
+- **State Management:** Context-based state management for the multi-step flow.
+- **Mock Data:** Hardcoded data for countries, top-up options, and user information.
 
-## Technical Notes and Trade-offs
+**Key Features:**
+- Multi-step flow for selecting top-up options.
+- Accessibility features following best practices.
+- International data selection with a country search.
+- Date selection using a calendar interface.
+- Loading and error states with retry functionality.
+- Phone number input with formatting and validation.
+- Confirmation screen with a success message.
 
-### Implementation Approach
+**Trade-offs:**
+- **Tailwind vs. CSS/SCSS:** While Tailwind accelerates development, pure CSS/SCSS may offer better performance, scalability, and organization in larger codebases.
+- **Client Components:** Improved interactivity at the cost of a slightly larger bundle size.
+- **Context API vs. Form Libraries:** React Context simplifies state management, but lacks the robustness of specialized form libraries like React Hook Form.
+- **Mock Data:** Using hardcoded data speeds up development but would require refactoring for real API integration.
 
-- **Framework**: Used Next.js with App Router for efficient routing (even though it wasn't needed in this case) and server components
-- **Styling**: Implemented with Tailwind CSS
-- **State Management**: Created a context-based state management system to handle the multi-step flow (even if values are hardcoded this was to make it more realistic and properly show the overall flow)
-- **Mock Data**: Used hardcoded data for countries, topup options, and user information
+**Future Improvements:**
+- Integrate with APIs for country data and top-up options.
+- Implement more robust form validation.
+- Add animations for smoother transitions.
+- Enhance accessibility features.
+- Expand test coverage.
 
+---
 
-### Key Features Implemented
+# Task 2: Refactored Button Component
 
-- Multi-step flow for selecting topup options
-- International data selection with country search
-- Date selection with calendar interface
-- Loading and error states with retry functionality
-- Phone number input with formatting and validation
-- Confirmation screen with success message
+In the `BetterButton.tsx` file, I refactored the original messy button component to improve clarity and maintainability. I updated naming conventions, added inline comments to explain my changes, and ensured the formatting follows best practices for readability.
 
+---
 
-### Technical Trade-offs
+# Task 3: Written Response
 
-**Tailwind vs CSS/SCSS**:
-
-- Had to use Tailwind instead of pure CSS/SCSS. From experience, I believe pure CSS/SCSS is superior for performance, scalability, and organization, especially in larger codebases. CSS keeps everything clean and organized while Tailwind can become messy as projects grow. Additionally, CSS offers much more flexibility for complex styling needs.
-
-
-
-**Client Components**:
-
-- Used client components for interactive elements requiring state
-- Trade-off: Slightly larger bundle size but better user experience with client-side interactions
-
-
-
-**Context API vs. Form Libraries**:
-
-- Used React Context for state management instead of form libraries like React Hook Form
-- Trade-off: Simpler implementation for this specific use case, but less robust for complex form validation
-
-
-
-**Mock Data**:
-
-- Used hardcoded data instead of API calls
-- Trade-off: Faster development but would need refactoring for real API integration
-
-
-
-
-
-### Future Improvements
-
-- Add proper API integration for country data and topup options
-- Implement more robust form validation
-- Add animations for smoother transitions between steps
-- Improve accessibility features
-- Add comprehensive test coverage
+When facing design inconsistencies, I’d first set up a quick discussion with the designer to understand their vision and clarify any ambiguities. I’d suggest establishing a unified design system with defined spacing, typography, and responsive breakpoints to ensure consistency across the application. In parallel, I’d propose creating a few annotated prototypes to test how these adjustments work on both desktop and mobile views. This collaborative approach not only addresses immediate issues but also lays the foundation for a more maintainable and scalable design process.
