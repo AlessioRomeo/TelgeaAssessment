@@ -34,6 +34,7 @@ I chose to implement the "Top-Up for Users" component because it offered a compl
 
 ### Tradeoffs
 - **Tailwind Requirement**: It’s used here as requested, but in large-scale apps, pure CSS or SCSS can often be more performant, more maintainable, and easier to customize.
+- **Font Family**: Unfortunately I wasn't able to find a free version of the font 'Selecta' used in the Figma design. For this reason I opted for a classic 'Poppins'. For a production app I would of course make sure to have the proper font family.
 - **Mocked Error Flow**: Demonstrates loading/error overlays; real APIs would be more elaborate.
 - **Context vs Redux**: Simplified approach for fewer dependencies; Redux might offer more tooling.
 - **Wizard Flow over Routing**: Users don’t have to reload pages or lose context between steps, though some might prefer Next.js routing for the step-by-step process.
