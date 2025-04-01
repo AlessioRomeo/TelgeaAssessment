@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react"
 import TopupOption from "../../Reusable/TopupOption"
 import { HOME_ZONE_TOPUPS } from "@/utils/topups"
@@ -14,7 +12,6 @@ interface TopupOptionsListProps {
 }
 
 /**
- * TopupOptionsList:
  * Renders the list of home-zone top-up options (imported from utils/topups.ts),
  * and notifies the parent component which option was selected.
  */

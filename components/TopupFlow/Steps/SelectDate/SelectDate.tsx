@@ -129,7 +129,7 @@ export default function SelectDate() {
                 </>
             ) : (
                 <>
-                    <h1 className="text-2xl font-medium mb-2">+ {selectedTopup}</h1>
+                    <h1 className="text-2xl font-medium mb-2">{selectedTopup}</h1>
                     <p className="text-xl text-gray-500 font-medium mb-3">HomeZone</p>
                 </>
             )}
