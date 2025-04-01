@@ -1,4 +1,3 @@
-
 # Demo: Video Preview
 
 https://github.com/user-attachments/assets/069e0cbe-95fb-40ba-bd0d-358ce5142909
@@ -8,7 +7,6 @@ https://github.com/user-attachments/assets/069e0cbe-95fb-40ba-bd0d-358ce5142909
 # Task 1: Building a Component
 
 ### Component Choice: Top-Up for Users
-
 I chose to implement the "Top-Up for Users" component because it offered a complete user flow with multiple screens and interactions—from selecting top-up options to confirming the request. This approach allowed me to demonstrate various skills such as form handling, state management, and dynamic component reuse. While the Whitelist Domains component was interesting, it felt too simple to showcase the breadth of my capabilities.
 
 ### Introduction
@@ -25,7 +23,6 @@ I chose to implement the "Top-Up for Users" component because it offered a compl
 ### Performance & Scalability
 - **Context & Reducers**: Central flow logic to avoid prop drilling and isolate complexity.
 - **Memoized Components**: `React.memo` and `useCallback` minimize unnecessary re-renders.
-- **Next.js Optimizations**: Automatic code splitting, efficient bundling, and fast SSR.
 - **Wizard vs Routing**: Maintaining each step as a state, rather than separate routes, reduces overhead and preserves data effortlessly between steps.
 
 ### Accessibility
@@ -39,6 +36,11 @@ I chose to implement the "Top-Up for Users" component because it offered a compl
 - **Context vs Redux**: Simplified approach for fewer dependencies; Redux might offer more tooling.
 - **Wizard Flow over Routing**: Users don’t have to reload pages or lose context between steps, though some might prefer Next.js routing for the step-by-step process.
 
+### Future Improvements
+- **More Rigorous Testing**: Introduce unit and integration tests using Jest/React Testing Library.
+- **Enhanced Responsiveness**: Thoroughly test and refine breakpoints for all screen sizes.
+- **Deeper Accessibility**: Include full keyboard-flow checks, more in depth ARIA validations, and screen reader optimizations.
+- **Production-Level API**: Integrate real or mock APIs beyond simple hardcoded data and error overlays, with robust error handling and logging.
 
 ---
 
