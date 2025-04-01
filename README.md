@@ -11,18 +11,33 @@ https://github.com/user-attachments/assets/069e0cbe-95fb-40ba-bd0d-358ce5142909
 
 I chose to implement the "Top-Up for Users" component because it offered a complete user flow with multiple screens and interactions—from selecting top-up options to confirming the request. This approach allowed me to demonstrate various skills such as form handling, state management, and dynamic component reuse. While the Whitelist Domains component was interesting, it felt too simple to showcase the breadth of my capabilities.
 
-### Technical Implementation and Reusable Components
+### Introduction
+- Demonstrates a multi-step mobile plan top-up flow built with **Next.js**, **TypeScript**, and **Tailwind**.
+- Utilizes a “wizard” style flow with **React Context** rather than Next.js routing, prioritizing state-driven steps.
+- Focuses on **code clarity**, **performance optimizations**, and **accessible** design patterns.
 
-The overall flow is managed using a context-based state management system. Even though I used hardcoded data for demonstration purposes, storing user selections in context simulates a realistic multi-step process. This design choice mimics the behavior of a production system where data flows smoothly between different screens, even if in a real-world scenario, the navigation might be handled via page rerouting and API calls.
+### Overview
+- **Phone Confirmation**: Validates phone number and simulates SMS confirmation.
+- **Option Selection**: Lets users pick data or minutes for local or international usage.
+- **Date Scheduling**: Provides a calendar interface for picking an activation date.
+- **Reusable Components**: Centralized UI patterns (buttons, overlays, forms) for consistency.
 
-In this project, I focused on building reusable components to keep the code maintainable and scalable. For example, I created a dynamic Action Buttons component that can be fed different properties (like label, variant, and onClick) to serve multiple purposes across the flow. I also built components like the Header and TopupOption to ensure consistency and reusability. Accessibility was a key priority—I added proper ARIA attributes and semantic HTML elements to enhance SEO and overall user accessibility.
+### Performance & Scalability
+- **Context & Reducers**: Central flow logic to avoid prop drilling and isolate complexity.
+- **Memoized Components**: `React.memo` and `useCallback` minimize unnecessary re-renders.
+- **Next.js Optimizations**: Automatic code splitting, efficient bundling, and fast SSR.
+- **Wizard vs Routing**: Maintaining each step as a state, rather than separate routes, reduces overhead and preserves data effortlessly between steps.
 
-### Trade-offs and Future Considerations
+### Accessibility
+- **Semantic Markup**: Uses proper headings, labels, roles, and ARIA attributes.
+- **Key Navigation**: Buttons, forms, and overlays designed for keyboard/screen reader use.
+- **Flexible Layout**: No rigid pixel sizes; though not tested for all breakpoints, it adapts well.
 
-I used a context-based state management approach to handle the multi-step flow, which allows realistic data sharing between components without relying on traditional page routing. Although Tailwind CSS was specified for this test, based on my experience at both startups and larger companies, I’ve found that pure CSS/SCSS is generally more effective for large-scale projects—it’s more organized, performs better, scales more efficiently, and is more customizable without relying on external libraries.
-
-For the demo, I couldn’t find a free version of the "Selecta" font used in the design, so I opted for the classic Poppins font instead. In a production environment, I would implement the correct font. Additionally, I didn’t focus heavily on responsiveness since it wasn’t clear whether this was intended as a mobile-only web app. However, I avoided using fixed sizes for most elements to keep the design somewhat adaptable. In a real-world application, I would ensure a fully responsive layout, integrate robust form libraries like React Hook Form, improve API integrations, and perform extensive accessibility testing.
-
+### Tradeoffs
+- **Tailwind Requirement**: It’s used here as requested, but in large-scale apps, pure CSS or SCSS can often be more performant, more maintainable, and easier to customize.
+- **Mocked Error Flow**: Demonstrates loading/error overlays; real APIs would be more elaborate.
+- **Context vs Redux**: Simplified approach for fewer dependencies; Redux might offer more tooling.
+- **Wizard Flow over Routing**: Users don’t have to reload pages or lose context between steps, though some might prefer Next.js routing for the step-by-step process.
 
 
 ---
@@ -35,4 +50,4 @@ In the `BetterButton.tsx` file, I refactored the original messy button component
 
 # Task 3: Written Response
 
-Having worked at both startups and big companies I fully understand how important communication is. When facing design inconsistencies, I’d first set up a quick discussion with the designer to understand their vision and clarify any ambiguities. I’d suggest establishing a unified design system with defined spacing, typography, and responsive breakpoints to ensure consistency across the application. In parallel, I’d propose creating a few annotated prototypes to test how these adjustments work on both desktop and mobile views. This collaborative approach not only addresses immediate issues but also lays the foundation for a more maintainable and scalable design process.
+Having worked at both startups and big companies I fully understand how important communication is. When facing design inconsistencies, I’d first set up a quick discussion with the designer to understand their vision and clarify any ambiguities. I’d suggest establishing a unified design system with defined spacing, typography, and responsive breakpoints to ensure consistency across the application. In parallel, I’d propose creating a few annotated prototypes to test how these adjustments work on both desktop and mobile views. This approach not only addresses immediate issues but also lays the foundation for a more maintainable and scalable design process for the future.
